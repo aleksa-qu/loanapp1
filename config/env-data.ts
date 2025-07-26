@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 
 if (process.env.CI !== "true") {
     dotenv.config({ path: "env/prod.env" });
@@ -7,9 +7,8 @@ if (process.env.CI !== "true") {
     console.log("Running in CI environment");
 }
 
-const requiredVars = ["URL"];
+const requiredVars = ["URL", "USERNAME", "PASSWORD"];
 
-// Check for missing variables
 requiredVars.forEach((varName) => {
     if (!process.env[varName]) {
         throw new Error(`Missing required environment variable: ${varName}`);
