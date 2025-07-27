@@ -3,7 +3,7 @@ import {
   SERVICE_URL,
   TEST_PASSWORD,
   TEST_USERNAME,
-} from "../../config/env-data";
+} from '../../config/env-data';
 
 export class LoanPage {
   readonly page: Page;
@@ -47,7 +47,9 @@ export class LoanPage {
     this.continueButton = page.getByTestId('login-popup-continue-button');
     this.applyLoanButton2 = page.getByTestId('id-image-element-button-image-2');
     this.applyLoanButton1 = page.getByTestId('id-image-element-button-image-1');
-    this.errorMessageBySmallAmount = page.getByTestId('id-small-loan-calculator-field-error')
+    this.errorMessageBySmallAmount = page.getByTestId(
+      'id-small-loan-calculator-field-error'
+    );
     this.mainPageHeadingText = page.locator(
       'text=Calculate your monthly payment'
     );

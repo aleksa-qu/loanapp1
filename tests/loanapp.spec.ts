@@ -53,7 +53,7 @@ test('Scroll Period option', async ({ page }) => {
   await loanPage.login();
   const loanResultPage = new LoanDetailPage(page);
   const loanMonthlyPaymentText =
-      await loanResultPage.finalMonthlyPayment.textContent();
+    await loanResultPage.finalMonthlyPayment.textContent();
   expect.soft(loanMonthlyPaymentText).toBe('83.36 €');
 });
 
@@ -129,12 +129,13 @@ test('By clicking on the first apply for loan button appears the main page with 
   });
   await expect.soft(loanPage.mainPageHeadingText).toBeVisible();
 });
-test("Error message by providing an amount less than 500 Euro",  async ({
-                                                                          page,
-                                                                        }) => {
-  await loanPage.amountInput.fill("499");
-  await loanPage.setPeriodOption("36");
+test('Error message by providing an amount less than 500 Euro', async ({
+  page,
+}) => {
+  await loanPage.amountInput.fill('499');
+  await loanPage.setPeriodOption('36');
   await expect.soft(loanPage.errorMessageBySmallAmount).toBeVisible();
-  await expect.soft(loanPage.errorMessageBySmallAmount).toHaveText("Oops, something went wrong");
+  await expect
+    .soft(loanPage.errorMessageBySmallAmount)
+    .toHaveText('Oops, something went wrong');
 });
-

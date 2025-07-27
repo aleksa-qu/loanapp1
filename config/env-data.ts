@@ -1,18 +1,18 @@
-import * as dotenv from "dotenv";
+import * as dotenv from 'dotenv';
 
-if (process.env.CI !== "true") {
-    dotenv.config({ path: "env/prod.env" });
-    console.log("Running in local environment");
+if (process.env.CI !== 'true') {
+  dotenv.config({ path: 'env/prod.env' });
+  console.log('Running in local environment');
 } else {
-    console.log("Running in CI environment");
+  console.log('Running in CI environment');
 }
 
-const requiredVars = ["URL", "USERNAME", "PASSWORD"];
+const requiredVars = ['URL', 'USERNAME', 'PASSWORD'];
 
 requiredVars.forEach((varName) => {
-    if (!process.env[varName]) {
-        throw new Error(`Missing required environment variable: ${varName}`);
-    }
+  if (!process.env[varName]) {
+    throw new Error(`Missing required environment variable: ${varName}`);
+  }
 });
 
 export const SERVICE_URL: string = process.env.URL!;
