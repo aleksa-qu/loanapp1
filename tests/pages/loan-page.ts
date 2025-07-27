@@ -22,6 +22,7 @@ export class LoanPage {
   readonly applyLoanButton1: Locator;
   readonly applyLoanButton2: Locator;
   readonly mainPageHeadingText: Locator;
+  readonly errorMessageBySmallAmount: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -46,6 +47,7 @@ export class LoanPage {
     this.continueButton = page.getByTestId('login-popup-continue-button');
     this.applyLoanButton2 = page.getByTestId('id-image-element-button-image-2');
     this.applyLoanButton1 = page.getByTestId('id-image-element-button-image-1');
+    this.errorMessageBySmallAmount = page.getByTestId('id-small-loan-calculator-field-error')
     this.mainPageHeadingText = page.locator(
       'text=Calculate your monthly payment'
     );
