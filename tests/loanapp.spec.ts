@@ -135,7 +135,5 @@ test('Error message by providing an amount less than 500 Euro', async ({
   await loanPage.amountInput.fill('499');
   await loanPage.setPeriodOption('36');
   await expect.soft(loanPage.errorMessageBySmallAmount).toBeVisible();
-  await expect
-    .soft(loanPage.errorMessageBySmallAmount)
-    .toHaveText('Oops, something went wrong');
+  await expect.soft(loanPage.errorMessageBySmallAmount).toHaveText('Oops, something went wrong');
 });
