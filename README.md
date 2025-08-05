@@ -22,3 +22,5 @@
 | 9   | Minimum Period slider set is 12, maximum Period slider set is 36                      |
 | 10  | By clicking on the second apply for loan button appears the main page with calculator |
 | 11  | By clicking on the first apply for loan button appears the main page with calculator  |
+| 12  | Mocked backend returns correct monthly payment                                        |
+| 13  | User can calculate, login and confirm loan with mocked backend                        |
