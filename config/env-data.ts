@@ -7,7 +7,7 @@ if (process.env.CI !== 'true') {
   console.log('Running in CI environment');
 }
 
-const requiredVars = ['URL', 'USERNAME', 'PASSWORD'];
+const requiredVars = ['URL', 'MYUSERNAME', 'PASSWORD'];
 
 requiredVars.forEach((varName) => {
   if (!process.env[varName]) {
@@ -17,4 +17,4 @@ requiredVars.forEach((varName) => {
 
 export const SERVICE_URL: string = process.env.URL!;
 export const TEST_PASSWORD: string = process.env.PASSWORD!;
-export const TEST_USERNAME: string = process.env.USERNAME!;
+export const TEST_USERNAME: string = process.env.MYUSERNAME!;
